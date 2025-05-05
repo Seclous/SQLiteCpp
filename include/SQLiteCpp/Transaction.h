@@ -27,6 +27,7 @@ enum class TransactionBehavior {
     DEFERRED,
     IMMEDIATE,
     EXCLUSIVE,
+    CONCURRENT,
 };
 
 /**

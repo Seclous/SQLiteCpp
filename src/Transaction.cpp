@@ -33,6 +33,9 @@ Transaction::Transaction(Database& aDatabase, TransactionBehavior behavior) :
         case TransactionBehavior::EXCLUSIVE:
             stmt = "BEGIN EXCLUSIVE";
             break;
+        case TransactionBehavior::CONCURRENT:
+            stmt = "BEGIN CONCURRENT";
+            break;
         default:
             throw SQLite::Exception("invalid/unknown transaction behavior", SQLITE_ERROR);
     }
